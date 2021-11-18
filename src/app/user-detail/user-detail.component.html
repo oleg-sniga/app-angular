@@ -1,0 +1,17 @@
+<div class="content" *ngIf="user">
+  <h2> {{ user.name | uppercase }}</h2>
+  <p>
+    <span>id: </span> {{ user.id }}
+  </p>
+  <p>
+    <span>age: </span> {{ user.age }}
+  </p>
+  <p>
+    <span>Favorite quote: </span><br/>
+    <q>{{ user.quote }}</q>
+  </p>
+  <br />
+  <br />
+  <br />
+  <button (click)="goBack()">go back</button>
+</div>
