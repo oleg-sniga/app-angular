@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 
 import { User } from "../user";
 import { UserService } from "../user.service";
-import { MessageService } from "../message.service";
 
 @Component({
   selector: 'app-users',
@@ -15,7 +14,7 @@ export class UsersComponent implements OnInit {
   selectedUser?: User;
   users: User[] = [];
 
-  constructor(private userService: UserService, private messageService: MessageService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.getUsers();
@@ -23,7 +22,6 @@ export class UsersComponent implements OnInit {
 
   onSelect(user: User): void {
     this.selectedUser = user;
-    this.messageService.add(`UsersComponent: Selected user id=${user.id}`);
   }
 
   getUsers(): void {
